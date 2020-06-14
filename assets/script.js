@@ -153,7 +153,6 @@ submit_button.addEventListener("click", function () {
     }
     window.localStorage.setItem("highScores", JSON.stringify(initialsObject))
     console.log(window.localStorage.getItem("highScores"))
-    document.getElementById("submit").setAttribute("style", "display: none;")
     displayHighScores(initialsObject) 
 })
 
@@ -169,7 +168,7 @@ function displayHighScores(initialsObject){
     var high_scores_list = document.getElementById("highScores");
     sortable.forEach((key) => {
         var lst_entry = document.createElement("li");
-        var textNode = document.createTextNode(key + " " + initialsObject[key]);
+        var textNode = document.createTextNode(key + " Score:  " + initialsObject[key]);
         lst_entry.appendChild(textNode);
         high_scores_list.appendChild(lst_entry);
     });
